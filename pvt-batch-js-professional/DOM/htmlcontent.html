@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="task">welcome to india</p>
+    <p id="css">styled text</p>
+    <img id="img" src="old.png" alt="old image">
+    <div id="container"></div>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+    <form id="myform">
+        <input type="text" id="name">
+        <button type="submit">Submit</button>
+
+    </form>
+    <button onclick="x()">Click</button>
+    <script>
+        function x() {
+            document.getElementById("task").innerHTML = "welcome to kolkata";
+            document.getElementById("css").style.color = "blue";
+            document.getElementById("css").style.fontSize = "25px";
+            document.getElementById("img").src = "new.png";
+            const newpara = document.createElement("p");
+            newpara.textContent = "this is a new paragraph";
+            document.getElementById("container").appendChild(newpara);
+            const items = document.querySelectorAll("li");
+            items.forEach(x=>{
+                console.log(`Item: ${x.textContent} `);
+            });
+            document.getElementById("myform").addEventListener("submit", function(e){
+                e.preventDefault();
+                alert("form submitted: "+document.getElementById("name").value);
+            })
+        }
+    </script>
+</body>
+
+</html>
